@@ -1,10 +1,20 @@
 import React, { useState, useCallback } from "react";
 import { RefreshCcw, Film } from "lucide-react";
 
-const API_KEY = "AIzaSyBYqvZQ-6bMq1wH3_mliN2jD-cVIyOIndQ";
+// --- FIX FOR IMPORT.META WARNING & ROBUST KEY RETRIEVAL ---
+// 1. Check for the secure token provided by the Canvas environment (works here).
+// 2. Fallback to the Vite environment variable (works in local dev with .env).
+const API_KEY =
+  typeof __initial_auth_token !== "undefined" && __initial_auth_token
+    ? __initial_auth_token
+    : typeof import.meta !== "undefined" && import.meta.env?.VITE_GEMINI_API_KEY
+    ? import.meta.env.VITE_GEMINI_API_KEY
+    : null;
+// --------------------------------------------------------
 
 // Gemini Configuration Constants
 const API_CONFIG = {
+  // We use the empty string here, but the URL will be constructed to use the key
   apiKey: "",
   baseApiUrl:
     "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent",
@@ -61,10 +71,11 @@ const App = () => {
       return;
     }
 
-    // Check if the API key is available before proceeding (now it checks your manually entered key)
-    if (API_KEY === "YOUR_GEMINI_API_KEY_HERE" || !API_KEY.trim()) {
+    // New check: Ensure the key is loaded from the environment
+    // The previous check is still good: if API_KEY is null, it means no key was found.
+    if (!API_KEY) {
       setErrorMessage(
-        "API Key is missing. Please insert your key into src/App.jsx to proceed."
+        "API Key is missing. If running locally, please create a .env file and set the VITE_GEMINI_API_KEY."
       );
       return;
     }
