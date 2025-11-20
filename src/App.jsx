@@ -1,9 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { RefreshCcw, Film } from "lucide-react";
 
-// --- FIX FOR IMPORT.META WARNING & ROBUST KEY RETRIEVAL ---
-// 1. Check for the secure token provided by the Canvas environment (works here).
-// 2. Fallback to the Vite environment variable (works in local dev with .env).
 const API_KEY =
   typeof __initial_auth_token !== "undefined" && __initial_auth_token
     ? __initial_auth_token
