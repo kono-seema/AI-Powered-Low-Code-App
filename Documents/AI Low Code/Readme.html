@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>AI-Powered Movie Recommender &ndash; Containerized DevOps Capstone</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="ai-powered-movie-recommender--containerized-devops-capstone">AI-Powered Movie Recommender – Containerized DevOps Capstone</h1>
+<p><img src="https://img.shields.io/badge/React-61DAFB?logo=react&amp;logoColor=000" alt="React">
+<img src="https://img.shields.io/badge/Node.js-339933?logo=node.js&amp;logoColor=white" alt="Node.js">
+<img src="https://img.shields.io/badge/Google_Gemini-8E75B2?logo=google&amp;logoColor=white" alt="Gemini">
+<img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&amp;logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&amp;logoColor=white" alt="Kubernetes">
+<img src="https://img.shields.io/badge/Azure_Kubernetes_Service-0089D6?logo=microsoft-azure&amp;logoColor=white" alt="Azure">
+<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?logo=github-actions&amp;logoColor=white" alt="GitHub Actions">
+<img src="https://img.shields.io/badge/GHCR-181717?logo=github&amp;logoColor=white" alt="GHCR"></p>
+<p>This repository contains the <strong>official Week 6 Capstone Project</strong> — a group-built, fully containerized and CI/CD-automated <strong>Movie Recommendation Web App</strong> powered by <strong>Google Gemini 2.5 Flash</strong> and successfully deployed on <strong>Azure Kubernetes Service (AKS)</strong>.</p>
+<h2 id="project-overview">Project Overview</h2>
+<p>A sleek, responsive React application that delivers highly personalized movie recommendations using natural-language prompts. Powered by <strong>Google Gemini 2.5 Flash</strong>, users simply describe what they’re in the mood for and instantly get curated suggestions with reasoning.</p>
+<p>Fully production-grade stack: multi-stage Docker → GHCR → GitHub Actions → AKS.</p>
+<h2 id="roles--contributors-as-per-project-brief">Roles &amp; Contributors (as per Project Brief)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Role</th>
+<th>Name</th>
+<th>Primary Focus Area</th>
+<th>Core Requirements Covered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>AI Application Developer</strong></td>
+<td><strong>Thoriso</strong></td>
+<td>Designed &amp; built the React frontend + Gemini 1.5 Flash integration</td>
+<td>2: AI-Powered Low-Code Application Development</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Containerization Specialist</strong></td>
+<td><strong>Pallo</strong></td>
+<td>Created optimized multi-stage Dockerfile &amp; managed GHCR</td>
+<td>1: Containerization Setup</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>DevOps Engineer (CI/CD)</strong></td>
+<td><strong>Lethabo</strong></td>
+<td>Built and tested end-to-end GitHub Actions pipeline</td>
+<td>3: DevOps Integration</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Cloud/Platform Engineer</strong></td>
+<td><strong>Lesego</strong></td>
+<td>Deployed, secured, and scaled the app on Azure Kubernetes Service</td>
+<td>4: Orchestration &amp; Cloud Deployment<br>5: Security &amp; Resource Management</td>
+</tr>
+</tbody>
+</table>
+<h2 id="features">Features</h2>
+<ul>
+<li>Modern React UI (Vite + Vanilla CSS)</li>
+<li>Node.js runtime for build and production</li>
+<li>Real-time movie recommendations via <strong>Gemini 2.5 Flash</strong></li>
+<li>Natural language input (e.g., “cozy Christmas movie with dogs”)</li>
+<li>Streaming responses, loading states, error handling</li>
+<li>Secure API key management with Kubernetes Secrets</li>
+</ul>
+<h2 id="tech-stack">Tech Stack</h2>
+<ul>
+<li><strong>Frontend</strong>: React 18 + Vite + Vanilla CSS</li>
+<li>
+<ul>
+<li><strong>Runtime</strong>: Node.js</li>
+</ul>
+</li>
+<li><strong>AI</strong>: Google Gemini 2.5 Flash</li>
+<li><strong>Container</strong>: Docker (multi-stage, ~180 MB final image)</li>
+<li><strong>Registry</strong>: GitHub Container Registry (<a href="http://ghcr.io">ghcr.io</a>)</li>
+<li><strong>CI/CD</strong>: GitHub Actions</li>
+<li><strong>Orchestration</strong>: Azure Kubernetes Service (AKS)</li>
+</ul>
+<h2 id="core-requirements-status">Core Requirements Status</h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Status</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multi-stage Dockerfile</td>
+<td>Done</td>
+<td><code>/Dockerfile</code> (~180 MB)</td>
+</tr>
+<tr>
+<td>Image on GHCR</td>
+<td>Done</td>
+<td><code>ghcr.io/kono-seema/ai-low-code-app:latest</code></td>
+</tr>
+<tr>
+<td>Gemini 2.5 Flash integration</td>
+<td>Done</td>
+<td>Live recommendations</td>
+</tr>
+<tr>
+<td>GitHub Actions CI/CD</td>
+<td>Done</td>
+<td><code>.github/workflows/main.yml</code></td>
+</tr>
+<tr>
+<td>Automated deployment to AKS</td>
+<td>Done</td>
+<td>Pipeline runs <code>kubectl apply</code></td>
+</tr>
+<tr>
+<td>Live HTTPS deployment</td>
+<td>Done</td>
+<td>Ingress + cert-manager + Let's Encrypt</td>
+</tr>
+<tr>
+<td>Secrets, limits, HPA, security best practices</td>
+<td>Done</td>
+<td>All in <code>k8s/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="live-demo">Live Demo</h2>
+<p><strong>Movie Recommender</strong>: <a href="http://4.253.88.198/">http://4.253.88.198/</a></p>
+<p>Try prompts like:</p>
+<ul>
+<li>“A mind-bending thriller like Inception but with more humor”</li>
+<li>“Feel-good 90s rom-com with a strong soundtrack”</li>
+</ul>
+<h2 id="local-development">Local Development</h2>
+<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/yourusername/movie-gemini-recommender.git
+<span class="hljs-built_in">cd</span> movie-gemini-recommender
+npm install
+<span class="hljs-comment"># Add your key</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;VITE_GEMINI_API_KEY=your_key_here&quot;</span> &gt; .<span class="hljs-built_in">env</span>
+npm run dev 
+</code></pre>
+<h2 id="cicd--deployment-highlights">CI/CD &amp; Deployment Highlights</h2>
+<ul>
+<li><strong>GitHub Actions</strong> automatically builds, pushes to GHCR, and deploys to AKS on every push to <code>main</code></li>
+<li>Zero-downtime rolling updates</li>
+<li>Horizontal Pod Autoscaler (HPA) with CPU-based scaling + strict resource requests/limits</li>
+<li>Gemini API key stored securely as a Kubernetes Secret (never exposed in code or images)</li>
+</ul>
+<h2 id="azure-kubernetes-deployment">Azure Kubernetes Deployment</h2>
+<p>Running on <strong>Azure Kubernetes Service (AKS)</strong> with the following production-grade configuration:</p>
+<ul>
+<li><strong>Horizontal Pod Autoscaler</strong> (HPA) — auto-scales pods when CPU &gt; 60%</li>
+<li><strong>Resource requests &amp; limits</strong> enforced for predictable performance and cost control</li>
+<li><strong>Google Gemini API key</strong> securely injected via Kubernetes Secret (never hardcoded)</li>
+<li><strong>Automatic SSL/TLS</strong> powered by cert-manager + Let's Encrypt (free, auto-renewing certificates)</li>
+</ul>
+
+            
+            
+        </body>
+        </html>
